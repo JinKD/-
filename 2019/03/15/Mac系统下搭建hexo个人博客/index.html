@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Mac系统下搭建hexo个人博客 | Hexo 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="John Doe">
+    
+    
+
+    <meta name="description" content="Mac 系统下搭建hexo个人博客 lxmic 关注  0.7 2018.08.19 11:47 字数 2154 阅读 2447评论 1喜欢 12  Mac-20180819.jpeg 1. 前言不久前买了17款的MacBook Pro，全新的电脑，我想在这个上面管理我的个人博客，所以我要继续搭建这样一个环境，说起来我也应该是老手了，我在2月份的时候已经在我的Linux上面搭建了环境，可以的是，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac系统下搭建hexo个人博客 | Hexo">
+<meta property="og:url" content="https://github.com/JinKD/jinkaida.github.io.git/2019/03/15/Mac系统下搭建hexo个人博客/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Mac 系统下搭建hexo个人博客 lxmic 关注  0.7 2018.08.19 11:47 字数 2154 阅读 2447评论 1喜欢 12  Mac-20180819.jpeg 1. 前言不久前买了17款的MacBook Pro，全新的电脑，我想在这个上面管理我的个人博客，所以我要继续搭建这样一个环境，说起来我也应该是老手了，我在2月份的时候已经在我的Linux上面搭建了环境，可以的是，">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://upload.jianshu.io/users/upload_avatars/3478485/a88236ce408a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-2a64d3d8483a24fd.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-81de99996c35fa6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/511/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-cad828d97fb4f8a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-918befac816ff5d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/285/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-d451ae9bb81c6d0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/771/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-05ee93d0cccbdbe0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/575/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-7c18ba82bb6dd688.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-a9853e573b2f3168.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/393/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-ad943de52c423555.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/458/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-a1753ffbbf1d4f96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/788/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-9a6fe8e8a47d59dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/239/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-92b2d4a66901907b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/275/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-f4a1759f76abfc57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/767/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-94a0d1a2f04727f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/776/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-a3a06109307ab5b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/357/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-e862816192df3dbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/762/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-c4837e910f043459.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/629/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-3cb21a03777bc825.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-3088138bb70404d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/388/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-039a85947f69656b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/880/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-52d30a963674a708.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-9a05ff4d6d8603ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/303/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-e5d38223a960e5d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-2f827fc6a36506cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/477/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-dbc42287b1f9d490.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/593/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-14af26f685431eff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/442/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-73f54bfdf14f4a9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/325/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-e2bc9266af442e86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-128cb22b5fbe2888.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/932/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-ee0bf9ca96a73be1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/797/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-a67e3c3e0b7d1bf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/817/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-ab1201acc94ac173.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/981/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-92da53d5e99eef50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/809/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-9bbc70592c01a5f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/251/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-e0256e0a9e7f30a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/807/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-301394f036009123.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/268/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-ef5470ccbab918ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/776/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-d025c5141f9f96d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-40ceed2500461a85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/577/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-06c25d7e130cd569.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/838/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-3d5c73f743f64f8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/560/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-2495b44e49466190.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/670/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-d5dc5582ff81079a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/840/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-b74f129ea9e06dfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/351/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-04f6bc9c7d793f4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/657/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-d005b7f46df73ecd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/667/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-3810a90a63f2740a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/430/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-f1d5619a1261e8a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/407/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-179683b97303a2c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/773/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-72ce02ae40117fd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/338/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-6f6f4124ea3af77b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/609/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-489eac36689cc02d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/762/format/webp">
+<meta property="og:updated_time" content="2019-03-15T08:59:42.943Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac系统下搭建hexo个人博客 | Hexo">
+<meta name="twitter:description" content="Mac 系统下搭建hexo个人博客 lxmic 关注  0.7 2018.08.19 11:47 字数 2154 阅读 2447评论 1喜欢 12  Mac-20180819.jpeg 1. 前言不久前买了17款的MacBook Pro，全新的电脑，我想在这个上面管理我的个人博客，所以我要继续搭建这样一个环境，说起来我也应该是老手了，我在2月份的时候已经在我的Linux上面搭建了环境，可以的是，">
+<meta name="twitter:image" content="https://upload.jianshu.io/users/upload_avatars/3478485/a88236ce408a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Hexo</a></h1>
+        <hr class="panel-cover__divider">
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title class>关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title class>归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Mac系统下搭建hexo个人博客</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2019-03-15" class="post-meta__date date">2019-03-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <blockquote>
+<h1 id="Mac-系统下搭建hexo个人博客"><a href="#Mac-系统下搭建hexo个人博客" class="headerlink" title="Mac 系统下搭建hexo个人博客"></a>Mac 系统下搭建hexo个人博客</h1><p><img src="https://upload.jianshu.io/users/upload_avatars/3478485/a88236ce408a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96"></p>
+<p><a href="https://www.jianshu.com/u/b4883cacff80" target="_blank" rel="noopener">lxmic</a></p>
+<p>关注</p>
+<p> 0.7 2018.08.19 11:47 字数 2154 阅读 2447评论 1喜欢 12</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-2a64d3d8483a24fd.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<p>Mac-20180819.jpeg</p>
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h1><p>不久前买了17款的MacBook Pro，全新的电脑，我想在这个上面管理我的个人博客，所以我要继续搭建这样一个环境，说起来我也应该是老手了，我在2月份的时候已经在我的Linux上面搭建了环境，可以的是，我的Linux被我系统重装了，磁盘全部清空，我没有办法继续来更新我的博客。这件事我已经想了好久，因为第一次的搭建，让我有些阴影，花了我好多的时间，太可怕。这次回家，我打算攻克这个问题，并且记录下来，所以有了这篇笔记。首先，需要的是把环境搭建好，这个是比较简单的，关键的是后期的博客修饰，要将其看起来很舒服，美观大气，简洁明了。那么开始吧……</p>
+<h1 id="2-hexo博客系统搭建"><a href="#2-hexo博客系统搭建" class="headerlink" title="2. hexo博客系统搭建"></a>2. hexo博客系统搭建</h1><p>如果不知道hexo是个什么东西，那就去百度一下吧，我也没法说清楚，我们可以使用它就可以了。可以去看官方的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档</a>，说得很详细，简单的说就是一个博客框架。</p>
+<h3 id="2-1-Github账号注册及仓库创建"><a href="#2-1-Github账号注册及仓库创建" class="headerlink" title="2.1 Github账号注册及仓库创建"></a>2.1 Github账号注册及仓库创建</h3><p>太多概念需要普及一下，如果是完全零基础的小伙伴，我这里也没办法，我也讲不了多少，我这里就只讲实战了，而不普及理论知识了，用到的时候去Google一下吧，基本没有什么问题。</p>
+<ul>
+<li><p>进入</p>
+<p>Github</p>
+<p>官网，注册账号</p>
+</li>
+</ul>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-81de99996c35fa6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/511/format/webp" alt="img"></p>
+<p>  账号注册页面，都是一般的流程，看着填写就可以</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-cad828d97fb4f8a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<p>注册号之后的页面</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-918befac816ff5d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/285/format/webp" alt="img"></p>
+<p>点击new仓库</p>
+<ul>
+<li><p>创建仓库的名字必须为</p>
+<p>username.github.io</p>
+<p>，我的用户名为Lxmic，因此我创建的仓库就是</p>
+<p>Lxmic.github.io</p>
+<p>，这是很关键的一点，很重要。输入名字后，直接点最下面绿色的按钮，创建新仓库。这一部分基本完成了，接下去需要在终端操作。</p>
+</li>
+</ul>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-d451ae9bb81c6d0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/771/format/webp" alt="img"></p>
+<p>  输入仓库的名字</p>
+<h3 id="2-2-环境配置"><a href="#2-2-环境配置" class="headerlink" title="2.2 环境配置"></a>2.2 环境配置</h3><p>参考官网<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档</a>：</p>
+<ul>
+<li>安装Git、Node.js和hexo</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; # 首先检查时候安装了git和node.js，终端输入一下命令，</span><br><span class="line">&gt; node -v #是否出现安装版本信息，出现说明已经安装了</span><br><span class="line">&gt; git --version #同上述情况</span><br><span class="line">&gt; # 如果没有安装，则进行安装,都可以通过直接下载安装测序进行安装，这里不演示，提供下载网址：</span><br><span class="line">&gt; [git]: https://sourceforge.net/projects/git-osx-installer/</span><br><span class="line">&gt; [node.js]: https://nodejs.org/en/</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<ul>
+<li>如果已经安装好了上述的软件，那么可以安装hexo，然后等待安装成功即可。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm install -g hexo-cli</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<ul>
+<li>创建blog文件夹，并初始化建立博客框架</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; # 在你的家目录下创建一个blog文件夹</span><br><span class="line">&gt; mkdir blog</span><br><span class="line">&gt; # 进入目录</span><br><span class="line">&gt; cd blog</span><br><span class="line">&gt; # 初始化目录</span><br><span class="line">&gt; hexo init</span><br><span class="line">&gt; 开启本地服务 </span><br><span class="line">&gt; # hexo s</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>出现以下信息，说明你可以本地访问博客系统，在浏览器输入4000这个网址，就可以看到博客首页。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-05ee93d0cccbdbe0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/575/format/webp" alt="img"></p>
+<p>image.png</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-7c18ba82bb6dd688.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<p>到这里说明你的环境以及没有问题了，成功了搭建起了博客框架</p>
+<h3 id="2-3-博客关联到Github仓库"><a href="#2-3-博客关联到Github仓库" class="headerlink" title="2.3 博客关联到Github仓库"></a>2.3 博客关联到Github仓库</h3><p>在第一步的时候，我们已经将仓库创建好了，这里就需要用到了。</p>
+<ul>
+<li>首先我们要编辑图中_config.yml文件，这是博客的主要配置文件，在下面一部分，我们要频繁使用这个配置文件，这里先编辑一步，为了管理GitHub账号。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-a9853e573b2f3168.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/393/format/webp" alt="img"></p>
+<p>image.png</p>
+<ul>
+<li>打开文件之后，在文档最后，输入红色大框中的内容，只需要将你的username替换就可以了，其他无需更改。</li>
+</ul>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-ad943de52c423555.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/458/format/webp" alt="img"></p>
+<p>  image.png</p>
+<ul>
+<li>然后在目录中执行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; # 产生静态网页</span><br><span class="line">&gt; hexo g</span><br><span class="line">&gt; # 部署到GitHub page上</span><br><span class="line">&gt; hexo d</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>然后你需要输入你GitHub的用户名和密码，这样你就就可以使用你的仓库名去访问你的博客主页了。为了每一次部署不必一种输入密码，我们可以生成秘钥，然后提交到GitHub，进行关联，那么你下次就不需要再输入密码了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-a1753ffbbf1d4f96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/788/format/webp" alt="img"></p>
+<p>关联成功，这里我是购买了自己的域名，所以显示的是域名，域名关联在后面讲，这里先忽略</p>
+<ul>
+<li>关联GitHub账号，免密提交</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; # 用你注册GitHub时的邮箱号，进行秘钥生成</span><br><span class="line">&gt; cd ~</span><br><span class="line">&gt; ssh-keygen -t rsa -C &quot;xxxxxxx@qq.com&quot;</span><br><span class="line">&gt; # 系统就会生成一个隐藏文件夹.ssh</span><br><span class="line">&gt; cd .ssh</span><br><span class="line">&gt; ls</span><br><span class="line">&gt; # 复制公钥</span><br><span class="line">&gt; vim id_rsa.pub</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>点击箭头的按钮，进入设置，然后点击SSH and GPG keys，创建新的SSH，将之前复制的公钥黏贴，提交，OK。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-9a6fe8e8a47d59dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/239/format/webp" alt="img"></p>
+<p>进入settings</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-92b2d4a66901907b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/275/format/webp" alt="img"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-f4a1759f76abfc57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/767/format/webp" alt="img"></p>
+<p>image.png</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-94a0d1a2f04727f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/776/format/webp" alt="img"></p>
+<p>image.png</p>
+<h3 id="2-4-博客基本使用"><a href="#2-4-博客基本使用" class="headerlink" title="2.4 博客基本使用"></a>2.4 博客基本使用</h3><ul>
+<li>创建新的文章</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo new &quot;djy&quot;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-a3a06109307ab5b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/357/format/webp" alt="img"></p>
+<p>执行之后，就会在下面的目录里自动创建djy.md的markdown文件，然后你就可以输入内容</p>
+<ul>
+<li><p>编辑markdown文件，可以使用markdown神器</p>
+<p>typora</p>
+<p>。可以看到markdown文件，里面自动生成了题目和时间，还可以写标签，这些我们先不去修改，这些是yaml内容，一般不去修改，修改不好会报错。我们直接在下面编辑一些内容。</p>
+</li>
+</ul>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-e862816192df3dbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/762/format/webp" alt="img"></p>
+<ul>
+<li>发布文章至博客</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo g</span><br><span class="line">&gt; hexo d</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>如果运行加过是这样的结果，那么你的博客发布成功了，以后每次只要这么进行就可以更新你的博客了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-c4837e910f043459.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/629/format/webp" alt="img"></p>
+<p>image.png</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-3cb21a03777bc825.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<p>我写的内容，可以在博客上发布了，成功</p>
+<h1 id="3-Hexo博客美化及功能增添"><a href="#3-Hexo博客美化及功能增添" class="headerlink" title="3. Hexo博客美化及功能增添"></a>3. Hexo博客美化及功能增添</h1><h3 id="3-1-选主题"><a href="#3-1-选主题" class="headerlink" title="3.1 选主题"></a>3.1 选主题</h3><ul>
+<li>Hexo官网：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a>，里面有特别多的主题可以选择，我在这里选的是next这个主题。下载主题：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd ~/blog</span><br><span class="line">&gt; git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>修改站点配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;   _config.yml</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>  ，将里面</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;   76行</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>  的theme由landscape修改为next</p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-3088138bb70404d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/388/format/webp" alt="img"></p>
+<p>  image.png</p>
+<ul>
+<li>更换新的主题，可能会有一些延迟</li>
+</ul>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-039a85947f69656b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/880/format/webp" alt="img"></p>
+<p>  image.png</p>
+<h3 id="3-2-通过站点配置文件修改网站细节"><a href="#3-2-通过站点配置文件修改网站细节" class="headerlink" title="3.2 通过站点配置文件修改网站细节"></a>3.2 通过站点配置文件修改网站细节</h3><p>需要修改的内容可以参考网站：<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/configuration</a>，里面对各个参数有一些详细的解释，我这里修改一些博客的标题，副标题，描述，语言等。<br><strong>这里我想说的是，一般你修改一项，重新部署网站一下，因为一旦出错，就比较容易找到原因。</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-52d30a963674a708.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<p>网站配置说明</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-9a05ff4d6d8603ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/303/format/webp" alt="img"></p>
+<p>只修改这些</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-e5d38223a960e5d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<p>修改后的博客，字体变成了中文，有了标题和副标题</p>
+<h3 id="3-3-主题文件修改博客内容"><a href="#3-3-主题文件修改博客内容" class="headerlink" title="3.3 主题文件修改博客内容"></a>3.3 主题文件修改博客内容</h3><ul>
+<li><p>关键也是同样名字的配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;   _config.yml</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>  ，看一下里面的内容。</p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-2f827fc6a36506cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/477/format/webp" alt="img"></p>
+<p>  image.png</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-dbc42287b1f9d490.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/593/format/webp" alt="img"></p>
+<p>开始是一些描述性的内容</p>
+<ul>
+<li>修改整个主题，不需要的用#注释掉，这里我已经将默认的Muse注释掉，改为mist</li>
+</ul>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-14af26f685431eff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/442/format/webp" alt="img"></p>
+<p>  image.png</p>
+<ul>
+<li>将menu也修改，没来只有首页和归档，限制添加标签和分类，只需要去掉前面的#，现在来看一下效果。</li>
+</ul>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-73f54bfdf14f4a9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/325/format/webp" alt="img"></p>
+<p>  image.png</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-e2bc9266af442e86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<p>效果</p>
+<ul>
+<li>需要新建一个分类和标签页面</li>
+</ul>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-128cb22b5fbe2888.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/932/format/webp" alt="img"></p>
+<p>  找不到页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd ~/blog</span><br><span class="line">&gt; hexo new page categories</span><br><span class="line">&gt; hexo new page tags</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-ee0bf9ca96a73be1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/797/format/webp" alt="img"></p>
+<p>添加分类类型</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-a67e3c3e0b7d1bf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/817/format/webp" alt="img"></p>
+<p>添加标签类型</p>
+<p>效果如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-ab1201acc94ac173.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/981/format/webp" alt="img"></p>
+<p>出现标签页面</p>
+<ul>
+<li>设置头像</li>
+</ul>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-92da53d5e99eef50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/809/format/webp" alt="img"></p>
+<p>  头像设置，参考next官网</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-9bbc70592c01a5f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/251/format/webp" alt="img"></p>
+<p>设置完之后的头像</p>
+<ul>
+<li>设置侧边栏的社交连接</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-e0256e0a9e7f30a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/807/format/webp" alt="img"></p>
+<p>next官网</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-301394f036009123.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/268/format/webp" alt="img"></p>
+<p>设置后的效果</p>
+<ul>
+<li><p>设置disqus评论功能，你只需要将站点配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;   disqus_shortname</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>  中设置你</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;   shortname</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>  ，并在主题配置文件中开启disqus功能为true。</p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/3478485-ef5470ccbab918ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/776/format/webp" alt="img"></p>
+<p>  image.png</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-d025c5141f9f96d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640/format/webp" alt="img"></p>
+<p>开启评论后的效果</p>
+<ul>
+<li>设置本地搜索功能，只需要主题配置文件将<code>local search</code> 改成<code>true</code>，并且需要修改站点配置文件，在extensions下面，添加内容如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; search:</span><br><span class="line">&gt;   path: search.xml</span><br><span class="line">&gt;   field: post</span><br><span class="line">&gt;   format: html</span><br><span class="line">&gt;   limit: 10000</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-40ceed2500461a85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/577/format/webp" alt="img"></p>
+<p>image.png</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-06c25d7e130cd569.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/838/format/webp" alt="img"></p>
+<p>搜索的效果</p>
+<ul>
+<li>设置阅读全文按钮，有时候文章有很多，你没有办法都是全文显示，会显得特别混乱，因此我们只要显示一部分内容。将主题配置文件中<code>auto_excerpt</code>开启，然后更新，就完全OK了。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-3d5c73f743f64f8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/560/format/webp" alt="img"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-2495b44e49466190.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/670/format/webp" alt="img"></p>
+<p>image.png</p>
+<ul>
+<li>设置打赏功能，不管有没有人，设置一下这个功能还是挺好的。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-d5dc5582ff81079a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/840/format/webp" alt="img"></p>
+<p>image.png</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-b74f129ea9e06dfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/351/format/webp" alt="img"></p>
+<p>打赏功能已经开启</p>
+<ul>
+<li>修改文章内链接文本样式，你如果不想要下划线，那么可以把里面的border-bottom这4行代码都修改为<code>none</code>。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-04f6bc9c7d793f4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/657/format/webp" alt="img"></p>
+<p>image.png</p>
+<blockquote>
+<p>参考文章：<a href="https://www.jianshu.com/p/3a05351a37dc" target="_blank" rel="noopener">https://www.jianshu.com/p/3a05351a37dc</a></p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-d005b7f46df73ecd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/667/format/webp" alt="img"></p>
+<p>image.png</p>
+<ul>
+<li>设置网站缩略图标，将small、medium、apple_touch_icon这三行，都设置成一样的图片地址</li>
+</ul>
+<blockquote>
+<p>参考文章：<a href="https://www.jianshu.com/p/3a05351a37dc" target="_blank" rel="noopener">https://www.jianshu.com/p/3a05351a37dc</a></p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-3810a90a63f2740a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/430/format/webp" alt="img"></p>
+<p>image.png</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-f1d5619a1261e8a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/407/format/webp" alt="img"></p>
+<p>这就是我选择的图标</p>
+<ul>
+<li>添加网站访问量</li>
+</ul>
+<blockquote>
+<p>参考文章：<a href="https://www.jianshu.com/p/3a05351a37dc" target="_blank" rel="noopener">https://www.jianshu.com/p/3a05351a37dc</a></p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-179683b97303a2c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/773/format/webp" alt="img"></p>
+<p>完全是别人的东西，直接跟着尝试</p>
+<p>效果如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-72ce02ae40117fd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/338/format/webp" alt="img"></p>
+<p>image.png</p>
+<ul>
+<li>添加版权信息</li>
+</ul>
+<blockquote>
+<p>参考文章：<a href="http://stevenshi.me/2017/05/26/hexo-add-copyright/" target="_blank" rel="noopener">http://stevenshi.me/2017/05/26/hexo-add-copyright/</a></p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-6f6f4124ea3af77b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/609/format/webp" alt="img"></p>
+<p>版权</p>
+<ul>
+<li>新创建的文章自动添加分类<br>在blog主目录下，编辑<code>post.md</code>，添加<code>categories：</code>就可以在创建的博客中生成。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/3478485-489eac36689cc02d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/762/format/webp" alt="img"></p>
+<p>image.png</p>
+<h1 id="4-结语"><a href="#4-结语" class="headerlink" title="4. 结语"></a>4. 结语</h1><p>花了一天半的时间，终于完成了博客的搭建，完全恢复到了之前的状态，这样就行了。网上有太多资料了，看都看不过来，很不错，下面列出我参考过的。终于把这件事给做完了，从二月份拖到了现在，真是拖延到无穷无尽。最后附上我博客的地址，会不定期更新。<br><strong>Lxmic Blog: <a href="https://othlis.com/" target="_blank" rel="noopener">https://othlis.com/</a></strong></p>
+</blockquote>
+<p> 此内容转自简书，作者lxmic</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
