@@ -1,230 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<!-- Head tag -->
 <head><meta name="generator" content="Hexo 3.8.0">
+
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
 
     
 
-    <title>
-      Mac系统下搭建hexo个人博客 | Hexo 
-    </title>
+    
+        <meta name="description" content="此内容转自简书，作者lxmic（转）
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    
-      <meta name="author" content="John Doe">
-    
+1. 前言不久前买了17款的MacBook Pro，全新的电脑，我想在这个上面管理我的个人博客，所以我要继续搭建这样一个环境，说起来我也应该是老手了，我在2月份的时候已经在我的Linux上面搭建了环境，可以的是，我的Linux被我系统重装了，磁盘全部清空，我没">
     
 
-    <meta name="description" content="此内容转自简书，作者lxmic（转）  1. 前言不久前买了17款的MacBook Pro，全新的电脑，我想在这个上面管理我的个人博客，所以我要继续搭建这样一个环境，说起来我也应该是老手了，我在2月份的时候已经在我的Linux上面搭建了环境，可以的是，我的Linux被我系统重装了，磁盘全部清空，我没有办法继续来更新我的博客。这件事我已经想了好久，因为第一次的搭建，让我有些阴影，花了我好多的时间，">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Mac系统下搭建hexo个人博客 | Hexo">
-<meta property="og:url" content="https://github.com/JinKD/jinkaida.github.io.git/2019/03/15/Mac系统下搭建hexo个人博客/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="此内容转自简书，作者lxmic（转）  1. 前言不久前买了17款的MacBook Pro，全新的电脑，我想在这个上面管理我的个人博客，所以我要继续搭建这样一个环境，说起来我也应该是老手了，我在2月份的时候已经在我的Linux上面搭建了环境，可以的是，我的Linux被我系统重装了，磁盘全部清空，我没有办法继续来更新我的博客。这件事我已经想了好久，因为第一次的搭建，让我有些阴影，花了我好多的时间，">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-2a64d3d8483a24fd.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-81de99996c35fa6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/511/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-cad828d97fb4f8a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-918befac816ff5d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/285/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-d451ae9bb81c6d0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/771/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-05ee93d0cccbdbe0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/575/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-7c18ba82bb6dd688.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-a9853e573b2f3168.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/393/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-ad943de52c423555.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/458/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-a1753ffbbf1d4f96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/788/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-9a6fe8e8a47d59dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/239/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-92b2d4a66901907b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/275/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-f4a1759f76abfc57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/767/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-94a0d1a2f04727f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/776/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-a3a06109307ab5b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/357/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-e862816192df3dbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/762/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-c4837e910f043459.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/629/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-3cb21a03777bc825.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-3088138bb70404d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/388/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-039a85947f69656b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/880/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-52d30a963674a708.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-9a05ff4d6d8603ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/303/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-e5d38223a960e5d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-2f827fc6a36506cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/477/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-dbc42287b1f9d490.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/593/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-14af26f685431eff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/442/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-73f54bfdf14f4a9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/325/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-e2bc9266af442e86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-128cb22b5fbe2888.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/932/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-ee0bf9ca96a73be1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/797/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-a67e3c3e0b7d1bf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/817/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-ab1201acc94ac173.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/981/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-92da53d5e99eef50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/809/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-9bbc70592c01a5f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/251/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-e0256e0a9e7f30a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/807/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-301394f036009123.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/268/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-ef5470ccbab918ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/776/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-d025c5141f9f96d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-40ceed2500461a85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/577/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-06c25d7e130cd569.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/838/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-3d5c73f743f64f8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/560/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-2495b44e49466190.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/670/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-d5dc5582ff81079a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/840/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-b74f129ea9e06dfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/351/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-04f6bc9c7d793f4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/657/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-d005b7f46df73ecd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/667/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-3810a90a63f2740a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/430/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-f1d5619a1261e8a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/407/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-179683b97303a2c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/773/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-72ce02ae40117fd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/338/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-6f6f4124ea3af77b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/609/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3478485-489eac36689cc02d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/762/format/webp">
-<meta property="og:updated_time" content="2019-03-15T09:06:50.329Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac系统下搭建hexo个人博客 | Hexo">
-<meta name="twitter:description" content="此内容转自简书，作者lxmic（转）  1. 前言不久前买了17款的MacBook Pro，全新的电脑，我想在这个上面管理我的个人博客，所以我要继续搭建这样一个环境，说起来我也应该是老手了，我在2月份的时候已经在我的Linux上面搭建了环境，可以的是，我的Linux被我系统重装了，磁盘全部清空，我没有办法继续来更新我的博客。这件事我已经想了好久，因为第一次的搭建，让我有些阴影，花了我好多的时间，">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3478485-2a64d3d8483a24fd.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Mac系统下搭建hexo个人博客">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="此内容转自简书，作者lxmic（转）
+
+1. 前言不久前买了17款的MacBook Pro，全新的电脑，我想在这个上面管理我的个人博客，所以我要继续搭建这样一个环境，说起来我也应该是老手了，我在2月份的时候已经在我的Linux上面搭建了环境，可以的是，我的Linux被我系统重装了，磁盘全部清空，我没">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
     
     
+        <meta property="og:image" content="https://github.com/JinKD/jinkaida.github.io.githttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
     
-      <link rel="icon" type="image/x-icon" href="/favicon.png">
+
+        <meta name="twitter:card" content="summary_large_image">
+
     
-    <link rel="stylesheet" href="/css/uno.css">
-    <link rel="stylesheet" href="/css/highlight.css">
-    <link rel="stylesheet" href="/css/archive.css">
-    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+    
+        <meta name="twitter:image" content="https://github.com/JinKD/jinkaida.github.io.githttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>Mac系统下搭建hexo个人博客 - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
 
 </head>
+
+
 <body>
 
-    <span class="mobile btn-mobile-menu">
-        <i class="icon icon-list btn-mobile-menu__icon"></i>
-        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
-    </span>
-
-    
-
-<header class="panel-cover panel-cover--collapsed">
-
-
-  <div class="panel-main">
-
-  
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
-
-        
-
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Hexo</a></h1>
-        <hr class="panel-cover__divider">
-
-        
-
-        <div class="navigation-wrapper">
-
-          <nav class="cover-navigation cover-navigation--primary">
-            <ul class="navigation">
-
-              
-                
-                <li class="navigation__item"><a href="/#blog" title class="blog-button">首页</a></li>
-              
-                
-                <li class="navigation__item"><a href="/about" title class>关于</a></li>
-              
-                
-                <li class="navigation__item"><a href="/archive" title class>归档</a></li>
-              
-
-            </ul>
-          </nav>
-
-          <!-- ----------------------------
-To add a new social icon simply duplicate one of the list items from below
-and change the class in the <i> tag to match the desired social network
-and then add your link to the <a>. Here is a full list of social network
-classes that you can use:
-
-    icon-social-500px
-    icon-social-behance
-    icon-social-delicious
-    icon-social-designer-news
-    icon-social-deviant-art
-    icon-social-digg
-    icon-social-dribbble
-    icon-social-facebook
-    icon-social-flickr
-    icon-social-forrst
-    icon-social-foursquare
-    icon-social-github
-    icon-social-google-plus
-    icon-social-hi5
-    icon-social-instagram
-    icon-social-lastfm
-    icon-social-linkedin
-    icon-social-medium
-    icon-social-myspace
-    icon-social-path
-    icon-social-pinterest
-    icon-social-rdio
-    icon-social-reddit
-    icon-social-skype
-    icon-social-spotify
-    icon-social-stack-overflow
-    icon-social-steam
-    icon-social-stumbleupon
-    icon-social-treehouse
-    icon-social-tumblr
-    icon-social-twitter
-    icon-social-vimeo
-    icon-social-xbox
-    icon-social-yelp
-    icon-social-youtube
-    icon-social-zerply
-    icon-mail
-
--------------------------------->
-
-<!-- add social info here -->
-
-
-
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
         </div>
 
-      </div>
-
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container -->
+</nav>
 
-    <div class="panel-cover--overlay"></div>
-  </div>
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Mac系统下搭建hexo个人博客</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-03-15
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 
-    <div class="content-wrapper">
-        <div class="content-wrapper__inner entry">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-<article class="post-container post-container--single">
-
-  <header class="post-header">
-    
-    <h1 class="post-title">Mac系统下搭建hexo个人博客</h1>
-
-    
-
-    <div class="post-meta">
-      <time datetime="2019-03-15" class="post-meta__date date">2019-03-15</time> 
-
-      <span class="post-meta__tags tags">
-
-          
-
-          
-
-      </span>
-    </div>
-    
-    
-
-  </header>
-
-  <section id="post-content" class="article-content post">
-    <blockquote>
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <blockquote>
 <p>此内容转自简书，作者lxmic（转）</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/3478485-2a64d3d8483a24fd.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
 <h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h1><p>不久前买了17款的MacBook Pro，全新的电脑，我想在这个上面管理我的个人博客，所以我要继续搭建这样一个环境，说起来我也应该是老手了，我在2月份的时候已经在我的Linux上面搭建了环境，可以的是，我的Linux被我系统重装了，磁盘全部清空，我没有办法继续来更新我的博客。这件事我已经想了好久，因为第一次的搭建，让我有些阴影，花了我好多的时间，太可怕。这次回家，我打算攻克这个问题，并且记录下来，所以有了这篇笔记。首先，需要的是把环境搭建好，这个是比较简单的，关键的是后期的博客修饰，要将其看起来很舒服，美观大气，简洁明了。那么开始吧……</p>
@@ -508,64 +481,76 @@ classes that you can use:
 </blockquote>
 <p> 此内容转自简书，作者lxmic（转）</p>
 
-  </section>
 
-  <section class="post-comments">
+                
+            </div>
 
-    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
-    
-</section>
-
-
-</article>
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
 
 
-            <footer class="footer">
-
-    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
-    
-</footer>
+                </div>
+            
         </div>
     </div>
+</article>
 
-    <!-- js files -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/scale.fix.js"></script>
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
     
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
-    
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript"> 
-        $(document).ready(function(){
-            MathJax.Hub.Config({ 
-                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
-            });
-        });
-    </script>
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
-
-    
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/awesome-toc.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $.awesome_toc({
-                overlay: true,
-                contentId: "post-content",
-            });
-        });
-    </script>
+<!-- Disqus Comments -->
 
 
-    
-    
-    <!--kill ie6 -->
-<!--[if IE 6]>
-  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
-<![endif]-->
 
 </body>
+
 </html>
