@@ -13,14 +13,20 @@
     
 
     
-        <meta name="description" content="ES6   -&amp;gt;  ECMA  标准
-js
-ES7  ES8…..
-ES5.x
-ECMA-262       -&amp;gt;   ES1.0ES2015
-ES6  -&amp;gt;   2015年6月    ES6.0
-每年6月份，发布一个版本
-2016年6月    ES6.1    ES7      ">
+        <meta name="description" content="关于定义(声明)变量:
+	之前:    var a=12;
+		let a=12
+作用域:
+	全局
+	函数作用域
+
+let		相当于之前的 var
+const		常量， 定义好了不能改变
+
+let注意:
+	1. 没有预解析，不存在变量提升
+		在代码块内，只要let定义变量，在之前使用，都是报错
+	">
     
 
     <!--Author-->
@@ -30,19 +36,25 @@ ES6  -&amp;gt;   2015年6月    ES6.0
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="ES6 常用总结">
+        <meta property="og:title" content="ES6 常用总结(一)">
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="ES6   -&amp;gt;  ECMA  标准
-js
-ES7  ES8…..
-ES5.x
-ECMA-262       -&amp;gt;   ES1.0ES2015
-ES6  -&amp;gt;   2015年6月    ES6.0
-每年6月份，发布一个版本
-2016年6月    ES6.1    ES7      ">
+        <meta property="og:description" content="关于定义(声明)变量:
+	之前:    var a=12;
+		let a=12
+作用域:
+	全局
+	函数作用域
+
+let		相当于之前的 var
+const		常量， 定义好了不能改变
+
+let注意:
+	1. 没有预解析，不存在变量提升
+		在代码块内，只要let定义变量，在之前使用，都是报错
+	">
     
 
     <!--Open Graph Site Name-->
@@ -69,7 +81,7 @@ ES6  -&amp;gt;   2015年6月    ES6.0
 
     <!-- Title -->
     
-    <title>ES6 常用总结 - Hexo</title>
+    <title>ES6 常用总结(一) - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -179,7 +191,7 @@ ES6  -&amp;gt;   2015年6月    ES6.0
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>ES6 常用总结</h1>
+                    <h1>ES6 常用总结(一)</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -207,174 +219,169 @@ ES6  -&amp;gt;   2015年6月    ES6.0
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>ES6   -&gt;  ECMA  标准</p>
-<p>js</p>
-<p>ES7  ES8…..</p>
-<p>ES5.x</p>
-<h2 id="ECMA-262-gt-ES1-0"><a href="#ECMA-262-gt-ES1-0" class="headerlink" title="ECMA-262       -&gt;   ES1.0"></a>ECMA-262       -&gt;   ES1.0</h2><p>ES2015</p>
-<p>ES6  -&gt;   2015年6月    ES6.0</p>
-<p>每年6月份，发布一个版本</p>
-<pre><code>2016年6月    ES6.1    ES7        ES2016
-2017年6月    ES6.2(async await)    ES8        ES2017
-
-ESnext
-</code></pre><hr>
-<h2 id="ESnext-‘下一代-js’语言"><a href="#ESnext-‘下一代-js’语言" class="headerlink" title="ESnext    ‘下一代 js’语言"></a>ESnext    ‘下一代 js’语言</h2><p>任何人都可以向 标准委员会 (TC39), 要求更改语言标准</p>
-<p>提案变成标准，经历5个阶段<br>    Stage 0    展示阶段<br>    Stage 1    征求意见阶段<br>    Stage 2    草案阶段<br>    Stage 3    候选阶段<br>    Stage 4    定案阶段(标准)</p>
-<h2 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h2><p><a href="https://github.com/tc39/ecma262">https://github.com/tc39/ecma262</a></p>
-<hr>
-<p>react， vue, angularJs， angular</p>
-<h2 id="chrome-对新的语法支持，速度还挺猛"><a href="#chrome-对新的语法支持，速度还挺猛" class="headerlink" title="chrome,    对新的语法支持，速度还挺猛"></a>chrome,    对新的语法支持，速度还挺猛</h2><p>ES6环境:<br>    webpack3.x</p>
-<pre><code>Traceur
-</code></pre><hr>
-<p>关于定义(声明)变量:<br>    之前:     var a=12;<br>        let a=12</p>
+                <p>关于定义(声明)变量:
+	之前:    var a=12;
+		let a=12</p>
 <pre><code>作用域:
-    全局
-    函数作用域
+	全局
+	函数作用域
 
-let        相当于之前的 var
-const        常量， 定义好了不能改变
+let		相当于之前的 var
+const		常量， 定义好了不能改变
 
 let注意:
-    1. 没有预解析，不存在变量提升
-        在代码块内，只要let定义变量，在之前使用，都是报错
-        先定义完，在使用
-    2.  同一个作用域里， 不能重复定义变量
-    3.  for循环，for循环里面是父级作用域，里面又一个
+	1. 没有预解析，不存在变量提升
+		在代码块内，只要let定义变量，在之前使用，都是报错
+		先定义完，在使用
+	2.  同一个作用域里， 不能重复定义变量
+	3.  for循环，for循环里面是父级作用域，里面又一个
 
 块级作用域:
-    {
-        //块级作用域
-    }
+	{
+		//块级作用域
+	}
+	
+	{{{{let a = 12}}}}
 
-    {{{{let a = 12}}}}
-
-    if(){xx}
-    for(){}
-    while(){}
+	if(){xx}
+	for(){}
+	while(){}
 
 
 const: 特性和let一样
-    const定义变量不能修改
+	const定义变量不能修改
 
-    const定义完变量，必须有值，不能后赋值，不能修改
+	const定义完变量，必须有值，不能后赋值，不能修改
 
-    Object.freeze(对象)
+	Object.freeze(对象)
 
-    const config={
-        host:
-        username:
-        password:
-        version:
-    }
+	const config={
+		host:
+		username:
+		password:
+		version:
+	}
 
 
 {
-    //TODO
+	//TODO
 }
 
 IIFE
 (function(){
-    //TODO
+	//TODO
 })()
 
 建议:
-    以后 就用 let  不要在使用var
-
-    const http = require(&apos;http&apos;);
-</code></pre><p>======================================<br>解构赋值:</p>
-<pre><code>*  非常有用，特别在做数据交互  ajax
-
-let [a,b,c] =[12,5, 6];
+	以后 就用 let  不要在使用var
+	
+	const http = require('http');
+</code></pre>
+<p>======================================
+解构赋值:
+	*  非常有用，特别在做数据交互  ajax</p>
+<pre><code>let [a,b,c] =[12,5, 6];
 
 注意: 左右两边，结构格式要保持一致
 
 json:
-    let {name,age, job} = {
-        name:&apos;Strive&apos;,
-        age:18,
-        job:&apos;码畜&apos;
-    };
+	let {name,age, job} = {
+	    name:'Strive',
+	    age:18,
+	    job:'码畜'
+	};
 
-    let {name:n,age:g, job:a} = json;
+	let {name:n,age:g, job:a} = json;
 
 解构时候可以给默认值：
-    let [a,b, c=&quot;默认值&quot;] = [&apos;aaa&apos;,&apos;bbb&apos;];
+	let [a,b, c=&quot;默认值&quot;] = ['aaa','bbb'];
 
 let a = 12;
 let b = 5;
 
+	
 
-
-import {a,b,c} from &apos;./mod&apos;
-</code></pre><p>======================================<br>字符串模板:<br>    <code></code>  字符串模板：<br>        优点: 可以随意换行<br>        <code>${变量名字}</code><br>    字符串连接，要死人的。</p>
-<pre><code>let name =&apos;Strive&apos;;
-        let age = 18;
-        let str = `这个人叫${name}, 年龄是 ${age}岁`;
+import {a,b,c} from './mod'
+</code></pre>
+<p>======================================
+字符串模板:
+	``  字符串模板：
+		优点: 可以随意换行
+		<code>${变量名字}</code>
+	字符串连接，要死人的。</p>
+<pre><code>let name ='Strive';
+    	let age = 18;
+    	let str = `这个人叫${name}, 年龄是 ${age}岁`;
 
 关于字符串一些东西:
-    字符串查找:
-        str.indexOf(要找的东西)   返回索引(位置) ，没找到返回-1
-        str.includes(要找的东西)   返回值  true/false
+	字符串查找:
+		str.indexOf(要找的东西)   返回索引(位置) ，没找到返回-1
+		str.includes(要找的东西)   返回值  true/false
 
-        判断浏览器:  includes
+		判断浏览器:  includes
 
-    http://www.xxx.xx
+	http://www.xxx.xx
 
-    字符串是否以谁开头:
-        str.startsWith(检测东西)
+	字符串是否以谁开头:
+		str.startsWith(检测东西)
 
-        检测地址
-    字符串是否以谁结尾:
-        str.endsWith(检测东西)
+		检测地址
+	字符串是否以谁结尾:
+		str.endsWith(检测东西)
 
-        .png
+		.png
 
-    重复字符串:
-        str.repeat(次数);
+	重复字符串:
+		str.repeat(次数);
 
 填充字符串:
-    str.padStart(整个字符串长度, 填充东西)   往前填充
-    str.padEnd(整个字符串长度, 填充东西)    往后填充
+	str.padStart(整个字符串长度, 填充东西)   往前填充
+	str.padEnd(整个字符串长度, 填充东西)    往后填充
 
-    str.padStart(str.length+padStr.length, padStr)
-</code></pre><p>============================================<br>函数变化:</p>
-<pre><code>1. 函数默认参数
-    function show({x=0,y=0}={}){
-        console.log(x,y);
-    }
-    show()
-2. 函数参数默认已经定义了，不能再使用let，const声明
-    function show(a=18){
-        let a = 101;  //错误
-        console.log(a);
-    }
-    show()
-</code></pre><p>扩展运算符、Rest运算符:<br>    …</p>
+	str.padStart(str.length+padStr.length, padStr)
+</code></pre>
+<p>============================================
+函数变化:
+	1. 函数默认参数
+		function show({x=0,y=0}={}){
+		    console.log(x,y);
+		}
+		show()
+	2. 函数参数默认已经定义了，不能再使用let，const声明
+		function show(a=18){
+		    let a = 101;  //错误
+		    console.log(a);
+		}
+		show()</p>
+<p>扩展运算符、Rest运算符:
+	...</p>
 <pre><code>展开数组
 
 ... :
-    [1,2,3,4]  -&gt; ... [1,2,3,4]  -&gt;  1,2,3,4,5
+	[1,2,3,4]  -&gt; ... [1,2,3,4]  -&gt;  1,2,3,4,5
 ...:
-    1,2,3,4,5  -&gt; ...1,2,3,4,5  -&gt;  [1,2,3,4,5]
+	1,2,3,4,5  -&gt; ...1,2,3,4,5  -&gt;  [1,2,3,4,5]
 
 剩余参数: 必须放到最后
-</code></pre><p>箭头函数:<br>    =&gt;</p>
+</code></pre>
+<p>箭头函数:
+	=&gt;</p>
 <pre><code>let show = () =&gt; 1;
 
 
 () =&gt; return东西
 
 () =&gt;{
-    语句
-    return
+	语句
+	return
 }
 
 注意:
-    1. this问题, 定义函数所在的对象，不在是运行时所在的对象
-    2. 箭头函数里面没有arguments, 用  ‘...’
-    3. 箭头函数不能当构造函数
+	1. this问题, 定义函数所在的对象，不在是运行时所在的对象
+	2. 箭头函数里面没有arguments, 用  ‘...’
+	3. 箭头函数不能当构造函数
 </code></pre>
+
 
                 
             </div>
