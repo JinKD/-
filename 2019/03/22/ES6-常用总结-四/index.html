@@ -1,19 +1,236 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ES6 常用总结(四) | Hexo 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="John Doe">
+    
+    
+
+    <meta name="description" content="async awaitSet  和  Map数据结构123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6 常用总结(四) | Hexo">
+<meta property="og:url" content="https://github.com/JinKD/jinkaida.github.io.git/2019/03/22/ES6-常用总结-四/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="async awaitSet  和  Map数据结构123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-22T07:26:12.424Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6 常用总结(四) | Hexo">
+<meta name="twitter:description" content="async awaitSet  和  Map数据结构123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
 
 
-block TOC
-	aside#toc-column
-		//- 这个block的渲染与否取决于当前视窗的宽度，具体的控制在scss文件里头实现。
-		#toc-column-inner-wrapper
-			- var contentsOptions = {list_number: theme.toc.list_number_on};
-			#post-toc!= toc(page.content, contentsOptions)
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Hexo</a></h1>
+        <hr class="panel-cover__divider">
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title class>关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title class>归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
 
 
 
-block mainContent
-	main#main-content-column
-		#main-content-wrapper
-			#post-full-content!= page.content
-			include includes/post-tags
-			include includes/post-categories
-		
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ES6 常用总结(四)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2019-03-22" class="post-meta__date date">2019-03-22</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="async-await"><a href="#async-await" class="headerlink" title="async await"></a>async await</h2><p>Set  和  Map数据结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">数据结构</span><br><span class="line">	数组</span><br><span class="line">	json， 二叉树....</span><br><span class="line"></span><br><span class="line">set数据结构:</span><br><span class="line">	类似数组，但是里面不能有重复值</span><br><span class="line"></span><br><span class="line">let arr  = [&apos;a&apos;,&apos;b&apos;,&apos;a&apos;];</span><br><span class="line"></span><br><span class="line">let arr = new Array();</span><br><span class="line"></span><br><span class="line">set用法:</span><br><span class="line">	let setArr = new Set([&apos;a&apos;,&apos;b&apos;]);</span><br><span class="line"></span><br><span class="line">	setArr.add(&apos;a&apos;);   往setArr里面添加一项</span><br><span class="line">	setArr.delete(&apos;b&apos;);	删除一项</span><br><span class="line">	setArr.has(&apos;a&apos;)	判断setArr里面有没有此值</span><br><span class="line">	setArr.size	个数</span><br><span class="line"></span><br><span class="line">	setArr.clear();	清空</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for...of...</span><br><span class="line"></span><br><span class="line">	循环:</span><br><span class="line">		a). for(let item of setArr)&#123;  //默认是values()</span><br><span class="line">		            console.log(item);</span><br><span class="line">		        &#125;</span><br><span class="line">		b). for(let item of setArr.keys())&#123;console.log(item);&#125;</span><br><span class="line">		c). for(let item of setArr.values())&#123;&#125;</span><br><span class="line">		d). for(let [k,v] of setArr.entries())&#123;&#125;</span><br><span class="line">		</span><br><span class="line">		e). setArr.forEach((value,index) =&gt;&#123;</span><br><span class="line">		            console.log(value, index);</span><br><span class="line">		        &#125;);</span><br><span class="line"></span><br><span class="line">let setArr = new Set().add(&apos;a&apos;).add(&apos;b&apos;).add(&apos;c&apos;);</span><br><span class="line"></span><br><span class="line">数组去重:</span><br><span class="line">	let arr = [1,2,3,4,5,6,7,6,5,4,3,2,1,2,3,4,4];</span><br><span class="line">	let newArr = [...new Set(arr)];</span><br><span class="line">	console.log(newArr);</span><br><span class="line"></span><br><span class="line">set数据结构变成数组:</span><br><span class="line">	[...set]</span><br><span class="line"></span><br><span class="line">想让set使用数组的，map循环和filter:</span><br><span class="line">	</span><br><span class="line">--------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">let arr = [&#123;&#125;,&#123;&#125;];</span><br><span class="line">--------------------------------------------------------------</span><br><span class="line">new Set([]);	存储数组， 这种写法对</span><br><span class="line"></span><br><span class="line">new WeakSet(&#123;&#125;)	存储json，这种写法不靠谱</span><br><span class="line"></span><br><span class="line">	WeakSet没有size，也没有clear()</span><br><span class="line"></span><br><span class="line">	有， add(), has(), delete()</span><br><span class="line"></span><br><span class="line">确认，初始往里面添加东西，是不行的。最好用add添加</span><br><span class="line">--------------------------------------------------------------</span><br><span class="line">总结: new Set()</span><br><span class="line">--------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">let json =&#123;</span><br><span class="line">	p1:1,</span><br><span class="line">	b:2</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">--------------------------------------------------------------</span><br><span class="line">map:</span><br><span class="line">	类似 json, 但是json的键(key)只能是字符串</span><br><span class="line"></span><br><span class="line">	map的key可以是任意类型</span><br><span class="line"></span><br><span class="line">使用:</span><br><span class="line">	let map = new Map();</span><br><span class="line"></span><br><span class="line">	map.set(key,value);    设置一个值</span><br><span class="line"></span><br><span class="line">	map.get(key)	获取一个值</span><br><span class="line"></span><br><span class="line">	map.delete(key)	删除一项</span><br><span class="line">	</span><br><span class="line">	map.has(key)	判断有没有</span><br><span class="line"></span><br><span class="line">	map.clear()	清空</span><br><span class="line"></span><br><span class="line">循环:</span><br><span class="line">	for(let [key,value] of map)&#123;&#125;</span><br><span class="line"></span><br><span class="line">	for(let key of map.keys())&#123;&#125;</span><br><span class="line"></span><br><span class="line">	for(let value of map.values())&#123;&#125;</span><br><span class="line"></span><br><span class="line">	for(let [k,v] of map.entries())&#123;&#125;</span><br><span class="line"></span><br><span class="line">	map.forEach((value, key) =&gt;&#123;</span><br><span class="line">	    console.log(value, key);</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">WeakMap():  key只能是对象</span><br><span class="line"></span><br><span class="line">------------------------------------------------------------</span><br><span class="line">总结：</span><br><span class="line">	Set   里面是数组，不重复，没有key，没有get方法</span><br><span class="line">	Map 对json功能增强，key可以是任意类型值</span><br><span class="line"></span><br><span class="line">------------------------------------------------------------</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

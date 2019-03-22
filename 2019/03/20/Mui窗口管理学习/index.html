@@ -1,19 +1,357 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Mui窗口管理学习 | Hexo 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="John Doe">
+    
+    
+
+    <meta name="description" content="页面初始化在app开发中，若要使用HTML5+扩展api，必须等plusready事件发生后才能正常使用，mui将该事件封装成了mui.plusReady()方法，涉及到HTML5+的api，建议都写在mui.plusReady方法中。 扩展阅读mui.init()    mui插件初始化 mui.ready();)    当DOM准备就绪时，指定一个函数来执行。 创建子页面在mobile app">
+<meta name="keywords" content="Mui">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mui窗口管理学习 | Hexo">
+<meta property="og:url" content="https://github.com/JinKD/jinkaida.github.io.git/2019/03/20/Mui窗口管理学习/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="页面初始化在app开发中，若要使用HTML5+扩展api，必须等plusready事件发生后才能正常使用，mui将该事件封装成了mui.plusReady()方法，涉及到HTML5+的api，建议都写在mui.plusReady方法中。 扩展阅读mui.init()    mui插件初始化 mui.ready();)    当DOM准备就绪时，指定一个函数来执行。 创建子页面在mobile app">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-20T05:53:08.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mui窗口管理学习 | Hexo">
+<meta name="twitter:description" content="页面初始化在app开发中，若要使用HTML5+扩展api，必须等plusready事件发生后才能正常使用，mui将该事件封装成了mui.plusReady()方法，涉及到HTML5+的api，建议都写在mui.plusReady方法中。 扩展阅读mui.init()    mui插件初始化 mui.ready();)    当DOM准备就绪时，指定一个函数来执行。 创建子页面在mobile app">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
 
 
-block TOC
-	aside#toc-column
-		//- 这个block的渲染与否取决于当前视窗的宽度，具体的控制在scss文件里头实现。
-		#toc-column-inner-wrapper
-			- var contentsOptions = {list_number: theme.toc.list_number_on};
-			#post-toc!= toc(page.content, contentsOptions)
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Hexo</a></h1>
+        <hr class="panel-cover__divider">
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title class>关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title class>归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
 
 
 
-block mainContent
-	main#main-content-column
-		#main-content-wrapper
-			#post-full-content!= page.content
-			include includes/post-tags
-			include includes/post-categories
-		
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Mui窗口管理学习</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2019-03-20" class="post-meta__date date">2019-03-20</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Mui/">Mui</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="页面初始化"><a href="#页面初始化" class="headerlink" title="页面初始化"></a><a href="http://dev.dcloud.net.cn/mui/window/#pageinit" target="_blank" rel="noopener">页面初始化</a></h3><p>在app开发中，若要使用<a href="http://www.html5plus.org/#specification" target="_blank" rel="noopener">HTML5+扩展api</a>，必须等plusready事件发生后才能正常使用，mui将该事件封装成了<code>mui.plusReady()</code>方法，涉及到HTML5+的api，建议都写在mui.plusReady方法中。</p>
+<h3 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><p><a href="http://dev.dcloud.net.cn/mui/util/#init" target="_blank" rel="noopener"><code>mui.init()</code></a>    mui插件初始化</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><code>mui.ready()</code></a>;)    当DOM准备就绪时，指定一个函数来执行。</p>
+<h3 id="创建子页面"><a href="#创建子页面" class="headerlink" title="创建子页面"></a><a href="http://dev.dcloud.net.cn/mui/window/#subpage" target="_blank" rel="noopener">创建子页面</a></h3><p>在mobile app开发过程中，经常会出现共用的导航栏或者选项卡，每次打开页面都需要重新渲染，而且容易出现卡头卡尾的现象。并且此时若使用局部滚动，在android手机上会出现滚动不流畅的问题；</p>
+<p>mui现在提供两种解决方案:</p>
+<p>第一种（官方推荐）：在plus环境下，使用原生titleNView以及原生tabbar来替换页面的导航栏或者选项卡。在页面打开时，渲染已经完成，让你的应用更接近原生app。具体做法：原生titleNView参考<code>mui.openWindow</code>的<a href="http://dev.dcloud.net.cn/mui/window/#titleNView" target="_blank" rel="noopener">示例3</a>，原生tabbar示例参考<a href="http://ask.dcloud.net.cn/article/12602" target="_blank" rel="noopener">ask教程示例</a></p>
+<p>第二种：通过双webview模式解决，此种情况适用于需要上下拉刷新的列表页面。将需要滚动的区域通过单独的webview实现，完全使用原生滚动。具体做法则是：将目标页面分解为主页面和内容页面，主页面显示卡头卡尾区域，比如顶部导航、底部选项卡等；内容页面显示具体需要滚动的内容，然后在主页面中调用mui.init方法初始化内容页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mui.init(&#123;</span><br><span class="line">    subpages:[&#123;</span><br><span class="line">      url:your-subpage-url,//子页面HTML地址，支持本地地址和网络地址</span><br><span class="line">      id:your-subpage-id,//子页面标志</span><br><span class="line">      styles:&#123;</span><br><span class="line">        top:subpage-top-position,//子页面顶部位置</span><br><span class="line">        bottom:subpage-bottom-position,//子页面底部位置</span><br><span class="line">        width:subpage-width,//子页面宽度，默认为100%</span><br><span class="line">        height:subpage-height,//子页面高度，默认为100%</span><br><span class="line">        ......</span><br><span class="line">      &#125;,</span><br><span class="line">      extras:&#123;&#125;//额外扩展参数</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong>styles表示窗口属性，参考<a href="http://www.dcloud.io/docs/api/zh_cn/webview.shtml#plus.webview.WebviewStyle" target="_blank" rel="noopener">5+规范中的WebviewStyle</a>；特别注意，height和width两个属性,即使不设置，也默认按100%计算；因此若设置了top值为非”0px”的情况，建议同时设置bottom值，否则5+ runtime根据高度100%计算，可能会造成页面真实底部位置超出屏幕范围的情况；left、right同理。</p>
+<h3 id="打开新页面"><a href="#打开新页面" class="headerlink" title="打开新页面"></a><a href="http://dev.dcloud.net.cn/mui/window/#openwindow" target="_blank" rel="noopener">打开新页面</a></h3><p>做web app，一个无法避开的问题就是转场动画；web是基于链接构建的，从一个页面点击链接跳转到另一个页面，如果通过有刷新的打开方式，用户要面对一个空白的页面等待；如果通过无刷新的方式，用Javascript移入DOM节点（常见的SPA解决方案），会碰到很高的性能挑战：DOM节点繁多，页面太大，转场动画不流畅甚至导致浏览器崩溃； mui的解决思路是：单webview只承载单个页面的dom，减少dom层级及页面大小；页面切换使用原生动画，将最耗性能的部分交给原生实现.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">mui.openWindow(&#123;</span><br><span class="line">    url:new-page-url,</span><br><span class="line">    id:new-page-id,</span><br><span class="line">    styles:&#123;</span><br><span class="line">      top:newpage-top-position,//新页面顶部位置</span><br><span class="line">      bottom:newage-bottom-position,//新页面底部位置</span><br><span class="line">      width:newpage-width,//新页面宽度，默认为100%</span><br><span class="line">      height:newpage-height,//新页面高度，默认为100%</span><br><span class="line">      ......</span><br><span class="line">    &#125;,</span><br><span class="line">    extras:&#123;</span><br><span class="line">      .....//自定义扩展参数，可以用来处理页面间传值</span><br><span class="line">    &#125;,</span><br><span class="line">    createNew:false,//是否重复创建同样id的webview，默认为false:不重复创建，直接显示</span><br><span class="line">    show:&#123;</span><br><span class="line">      autoShow:true,//页面loaded事件发生后自动显示，默认为true</span><br><span class="line">      aniShow:animationType,//页面显示动画，默认为”slide-in-right“；</span><br><span class="line">      duration:animationTime//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；</span><br><span class="line">    &#125;,</span><br><span class="line">    waiting:&#123;</span><br><span class="line">      autoShow:true,//自动显示等待框，默认为true</span><br><span class="line">      title:&apos;正在加载...&apos;,//等待对话框上显示的提示内容</span><br><span class="line">      options:&#123;</span><br><span class="line">        width:waiting-dialog-widht,//等待框背景区域宽度，默认根据内容自动计算合适宽度</span><br><span class="line">        height:waiting-dialog-height,//等待框背景区域高度，默认根据内容自动计算合适高度</span><br><span class="line">        ......</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>参数：</strong></p>
+<ul>
+<li><p><code>styles</code></p>
+<p>窗口参数，参考<a href="http://www.dcloud.io/docs/api/zh_cn/webview.shtml#plus.webview.WebviewStyle" target="_blank" rel="noopener">5+规范中的WebviewStyle</a>；特别注意，height和width两个属性,即使不设置，也默认按100%计算；因此若设置了top值为非”0px”的情况，建议同时设置bottom值，否则5+ runtime根据高度100%计算，可能会造成页面真实底部位置超出屏幕范围的情况；left、right同理。</p>
+</li>
+<li><p><code>extras</code></p>
+<p>新窗口的额外扩展参数，可用来处理页面间传值；例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var webview = mui.openWindow(&#123;</span><br><span class="line">	url:&apos;info.html&apos;,</span><br><span class="line">	extras:&#123;</span><br><span class="line">		name:&apos;mui&apos;  //扩展参数</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(webview.name);//输出mui字符串</span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<p>扩展参数仅在打开新窗口时有效，若目标窗口为预加载页面，则通过mui.openWindow方法打开时传递的extras参数无效。</p>
+</li>
+</ul>
+<ul>
+<li><p><code>createNew</code></p>
+<p>是否重复创建相同id的webview；</p>
+<p>为优化性能、避免app中重复创建webview，mui v1.7.0开始增加createNew参数，默认为false；判断逻辑如下：</p>
+<ul>
+<li>createNew参数为为true，则不判断重复，每次都新建webview；</li>
+<li>createNew参数为为fasle，则先查找当前App中是否已存在同样id的webview，若存在则直接显示；否则新创建并根据show参数执行显示逻辑；</li>
+</ul>
+<p><strong>注意</strong>：plusReady事件仅在webview首次创建时触发，使用<code>mui.openWindow</code>方法多次打开已存在的同样id的webview时，是不会重复触发plusReady事件的； 因此若业务写在plusReady事件中，可能会出现执行结果和预期不一致的情况；此时可通过<a href="http://dev.dcloud.net.cn/mui/event/#customevent" target="_blank" rel="noopener">自定义事件</a>触发； 案例参考：<a href="http://ask.dcloud.net.cn/question/6514" target="_blank" rel="noopener">mui.plusReady有时会失效</a>;</p>
+</li>
+<li><p><code>show</code></p>
+<p>窗口显示控制参数，具体参数如下：</p>
+<ul>
+<li>autoShow：目标窗口loaded事件发生后，是否自动显示，默认为true；若为false，则仅创建但不显示webview；若目标页面为预加载页面，则该参数无效；</li>
+<li>aniShow表示页面显示动画，比如从右侧划入、从下侧划入等，具体可参考<a href="http://www.dcloud.io/docs/api/zh_cn/webview.shtml#plus.webview.AnimationTypeShow" target="_blank" rel="noopener">5+规范中的AnimationTypeShow</a></li>
+<li>duration：显示Webview窗口动画的持续时间，单位为ms</li>
+</ul>
+</li>
+<li><p><code>waiting</code></p>
+<p>系统等待框参数</p>
+<p>mui框架在打开新页面时等待框的处理逻辑为：</p>
+<p>显示等待框–&gt;创建目标页面webview–&gt;目标页面loaded事件发生–&gt;关闭等待框；</p>
+<p>因此，只有当新页面为新创建页面（webview）时，会显示等待框，否则若为预加载好的页面，则直接显示目标页面，不会显示等待框。waiting中的具体参数：</p>
+<ul>
+<li>autoShow：是否自动显示等待框，默认为true；若为false，则不显示等待框；注意：若waiting框的autoShow为true，但目标页面不自动显示，则需在目标页面中通过如下代码关闭等待框：<code>plus.nativeUI.closeWaiting();</code></li>
+<li>title：等待框上的提示文字</li>
+<li>options表示等待框显示参数，比如宽高、背景色、提示文字颜色等，具体可参考<a href="http://www.dcloud.io/docs/api/zh_cn/nativeUI.shtml#plus.nativeUI.WaitingOption" target="_blank" rel="noopener">5+规范中的WaitingOption</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>示例1：</strong>Hello mui中，点击首页右上角的图标，会打开关于页面，实现代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//tap为mui封装的单击事件，可参考手势事件章节</span><br><span class="line">document.getElementById(&apos;info&apos;).addEventListener(&apos;tap&apos;, function() &#123;</span><br><span class="line">  //打开关于页面</span><br><span class="line">  mui.openWindow(&#123;</span><br><span class="line">    url: &apos;examples/info.html&apos;, </span><br><span class="line">    id:&apos;info&apos;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>因没有传入styles参数，故默认全屏显示；也没有传入show参数，故使用slide-in-right动画，新页面从右侧滑入。</p>
+<p><strong>示例2：</strong>从A页面打开B页面，B页面为一个需要从服务端加载的列表页面，若在B页面loaded事件发生时就将其显示出来，因服务器数据尚未加载完毕，列表页面为空，用户体验不好；可通过如下方式改善用户体验（最好的用户体验应该是通过<a href="http://dev.dcloud.net.cn/mui/window/#preload" target="_blank" rel="noopener">预加载</a>的方式）：第一步，B页面loaded事件发生后，不自动显示；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//A页面中打开B页面，设置show的autoShow为false，则B页面在其loaded事件发生后，不会自动显示；</span><br><span class="line">mui.openWindow(&#123;</span><br><span class="line">    url: &apos;B.html&apos;, </span><br><span class="line">    show:&#123;</span><br><span class="line">      autoShow:false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>第二步，在B页面获取列表数据后，再关闭等待框、显示B页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//B页面onload从服务器获取列表数据；</span><br><span class="line">window.onload = function()&#123;</span><br><span class="line">  //从服务器获取数据</span><br><span class="line">  ....</span><br><span class="line">  //业务数据获取完毕，并已插入当前页面DOM；</span><br><span class="line">  //注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；</span><br><span class="line">  mui.plusReady(function()&#123;</span><br><span class="line">    //关闭等待框</span><br><span class="line">    plus.nativeUI.closeWaiting();</span><br><span class="line">    //显示当前页面</span><br><span class="line">    mui.currentWebview.show();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="扩展阅读-1"><a href="#扩展阅读-1" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><p>代码块激活字符:    </p>
+<p>mopenwindow</p>
+<h3 id="打开带原生导航栏的新页面"><a href="#打开带原生导航栏的新页面" class="headerlink" title="打开带原生导航栏的新页面"></a><a href="http://dev.dcloud.net.cn/mui/window/#openWindowWithTitle" target="_blank" rel="noopener">打开带原生导航栏的新页面</a></h3><p>使用父子 webview 或者同屏显示多个 webview 的性能和资源消耗较大。非必要不推荐使用同屏多 webview 的方案，推荐使用原生导航栏方案代替。可以加快窗体进入速度，内存占用更少。</p>
+<p>通过在 mui.openWindow 的 styles 节点中设置 titleNView 节点的相关参数，可实现绘制原生导航栏控件，具体可参考 5+ webviewStyles 中的 titleNView 节点中的<a href="http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewTitleNViewStyles" target="_blank" rel="noopener"> WebviewTitleNViewStyles </a>的详细文档。示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">mui.openWindow(&#123;</span><br><span class="line">  url: webviewUrl,</span><br><span class="line">  id: webviewId,</span><br><span class="line">  styles: &#123;                             // 窗口参数 参考5+规范中的WebviewStyle,也就是说WebviewStyle下的参数都可以在此设置</span><br><span class="line">    titleNView: &#123;                       // 窗口的标题栏控件</span><br><span class="line">      titleText:&quot;标题栏&quot;,                // 标题栏文字,当不设置此属性时，默认加载当前页面的标题，并自动更新页面的标题</span><br><span class="line">      titleColor:&quot;#000000&quot;,             // 字体颜色,颜色值格式为&quot;#RRGGBB&quot;,默认值为&quot;#000000&quot;</span><br><span class="line">      titleSize:&quot;17px&quot;,                 // 字体大小,默认17px</span><br><span class="line">      backgroundColor:&quot;#F7F7F7&quot;,        // 控件背景颜色,颜色值格式为&quot;#RRGGBB&quot;,默认值为&quot;#F7F7F7&quot;</span><br><span class="line">      progress:&#123;                        // 标题栏控件的进度条样式</span><br><span class="line">        color:&quot;#00FF00&quot;,                // 进度条颜色,默认值为&quot;#00FF00&quot;  </span><br><span class="line">        height:&quot;2px&quot;                    // 进度条高度,默认值为&quot;2px&quot;         </span><br><span class="line">      &#125;,</span><br><span class="line">      splitLine:&#123;                       // 标题栏控件的底部分割线，类似borderBottom</span><br><span class="line">        color:&quot;#CCCCCC&quot;,                // 分割线颜色,默认值为&quot;#CCCCCC&quot;  </span><br><span class="line">        height:&quot;1px&quot;                    // 分割线高度,默认值为&quot;2px&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>说明：</strong>老版本的 <code>mui.openWindowWithTitle</code> 已经废除。</p>
+<h3 id="关闭页面"><a href="#关闭页面" class="headerlink" title="关闭页面"></a><a href="http://dev.dcloud.net.cn/mui/window/#closewindow" target="_blank" rel="noopener">关闭页面</a></h3><p>mui框架将窗口关闭功能封装在<code>mui.back</code>方法中，具体执行逻辑是：</p>
+<ul>
+<li>若当前webview为预加载页面，则hide当前webview；</li>
+<li>否则，close当前webview；</li>
+</ul>
+<p>在mui框架中，有三种操作会触发页面关闭（执行mui.back方法）：</p>
+<ul>
+<li>点击包含<code>.mui-action-back</code>类的控件</li>
+<li>在屏幕内，向右快速滑动</li>
+<li>Android手机按下back按键</li>
+</ul>
+<h4 id="iOS平台原生支持从屏幕边缘右滑关闭"><a href="#iOS平台原生支持从屏幕边缘右滑关闭" class="headerlink" title="iOS平台原生支持从屏幕边缘右滑关闭"></a>iOS平台原生支持从屏幕边缘右滑关闭</h4><p>iOS平台可通过popGesture参数实现从屏幕边缘右滑关闭webview，参考<a href="http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyle" target="_blank" rel="noopener">5+规范</a>，若想禁用该功能，可通过setStyle方法设置popGesture为none。</p>
+<p>hbuilder中敲<code>mheader</code>生成的代码块，会自动生成带有返回导航箭头的标题栏，点击返回箭头可关闭当前页面，原因就是因为该返回箭头包含<code>.mui-action-back</code>类，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;header class=&quot;mui-bar mui-bar-nav&quot;&gt;</span><br><span class="line">	&lt;a class=&quot;mui-action-back mui-icon mui-icon-left-nav mui-pull-left&quot;&gt;&lt;/a&gt;</span><br><span class="line">	&lt;h1 class=&quot;mui-title&quot;&gt;标题&lt;/h1&gt;</span><br><span class="line">&lt;/header&gt;</span><br></pre></td></tr></table></figure>
+<p>若希望在顶部导航栏之外的其它区域添加关闭页面的控件，只需要在对应控件上添加<code>.mui-action-back</code>类即可，如下为一个关闭按钮示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;button&quot; class=&apos;mui-btn mui-btn-danger mui-action-back&apos;&gt;关闭&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p>mui框架封装的页面右滑关闭功能，默认未启用，若要使用右滑关闭功能，需要在<code>mui.init();</code>方法中设置swipeBack参数，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mui.init(&#123;</span><br><span class="line">	swipeBack:true //启用右滑关闭功能</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>mui框架默认会监听Android手机的back按键，然后执行页面关闭逻辑； 若不希望mui自动处理back按键，可通过如下方式关闭mui的back按键监听；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mui.init(&#123;</span><br><span class="line">	keyEventBind: &#123;</span><br><span class="line">		backbutton: false  //关闭back按键监听</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>除了如上三种操作外，也可以直接调用<code>mui.back()</code>方法，执行窗口关闭逻辑；</p>
+<p><code>mui.back()</code>仅处理窗口逻辑，若希望在窗口关闭之前再处理一些其它业务逻辑，则可将业务逻辑抽象成一个具体函数，然后注册为mui.init方法的beforeback参数;beforeback的执行逻辑为：</p>
+<ul>
+<li>执行beforeback参数对应的函数若返回false，则不再执行<code>mui.back()</code>方法；</li>
+<li>否则（返回true或无返回值），继续执行<code>mui.back()</code>方法；</li>
+</ul>
+<p>示例：从列表打开详情页面，从详情页面再返回后希望刷新列表界面，此时可注册beforeback参数，然后通过<a href="http://dev.dcloud.net.cn/mui/event/#customevent" target="_blank" rel="noopener">自定义事件</a>通知列表页面刷新数据，示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mui.init(&#123;</span><br><span class="line">	beforeback: function()&#123;</span><br><span class="line">		//获得列表界面的webview</span><br><span class="line">		var list = plus.webview.getWebviewById(&apos;list&apos;);</span><br><span class="line">		//触发列表界面的自定义事件（refresh）,从而进行数据刷新</span><br><span class="line">		mui.fire(list,&apos;refresh&apos;);</span><br><span class="line">		//返回true，继续页面关闭逻辑</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>注意：beforeback的执行返回必须是同步的（阻塞模式），若使用nativeUI这种异步js（非阻塞模式），则可能会出现意想不到的结果；比如：通过<code>plus.nativeUI.confirm()</code>弹出确认框，可能用户尚未选择，页面已经返回了（beforeback同步执行完毕，无返回值，继续执行<code>mui.back()</code>方法，nativeUI不会阻塞js进程）：在这种情况下，若要自定义业务逻辑，就需要复写<code>mui.back</code>方法了；如下为一个自定义示例，每次都需要用户确认后，才会关闭当前页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//备份mui.back，mui.back已将窗口关闭逻辑封装的比较完善（预加载及父子窗口），因此最好复用mui.back</span><br><span class="line">var old_back = mui.back;</span><br><span class="line">mui.back = function()&#123;</span><br><span class="line">  var btn = [&quot;确定&quot;,&quot;取消&quot;];</span><br><span class="line">  mui.confirm(&apos;确认关闭当前窗口？&apos;,&apos;Hello MUI&apos;,btn,function(e)&#123;</span><br><span class="line">    if(e.index==0)&#123;</span><br><span class="line">    	//执行mui封装好的窗口关闭逻辑；</span><br><span class="line">    	old_back();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="为何设置了swipeBack-false，在iOS上依然可以右滑关闭？"><a href="#为何设置了swipeBack-false，在iOS上依然可以右滑关闭？" class="headerlink" title="为何设置了swipeBack: false，在iOS上依然可以右滑关闭？"></a>为何设置了swipeBack: false，在iOS上依然可以右滑关闭？</h4><p>iOS平台原生支持从屏幕边缘右滑关闭，这个是通过popGesture参数控制的，参考<a href="http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyle" target="_blank" rel="noopener">5+规范</a>，若需禁用，可通过setStyle方法设置popGesture为none。</p>
+<h4 id="能否通过addEventListener增加back按键监听实现自定义关闭逻辑？"><a href="#能否通过addEventListener增加back按键监听实现自定义关闭逻辑？" class="headerlink" title="能否通过addEventListener增加back按键监听实现自定义关闭逻辑？"></a>能否通过addEventListener增加back按键监听实现自定义关闭逻辑？</h4><p>addEventListener只会增加新的执行逻辑，老的监听逻辑(mui.back)依然会执行，因此，若需实现自定义关闭逻辑，一定要重写mui.back。</p>
+<h3 id="扩展阅读-2"><a href="#扩展阅读-2" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><p>代码块激活字符:    </p>
+<p>mback</p>
+<h3 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a><a href="http://dev.dcloud.net.cn/mui/window/#preload" target="_blank" rel="noopener">预加载</a></h3><p>所谓的预加载技术就是在用户尚未触发页面跳转时，提前创建目标页面，这样当用户跳转时，就可以立即进行页面切换，节省创建新页面的时间，提升app使用体验。mui提供两种方式实现页面预加载。</p>
+<p>方式一：通过mui.init方法中的preloadPages参数进行配置.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mui.init(&#123;</span><br><span class="line">  preloadPages:[</span><br><span class="line">    &#123;</span><br><span class="line">      url:prelaod-page-url,</span><br><span class="line">      id:preload-page-id,</span><br><span class="line">      styles:&#123;&#125;,//窗口参数</span><br><span class="line">      extras:&#123;&#125;,//自定义扩展参数</span><br><span class="line">      subpages:[&#123;&#125;,&#123;&#125;]//预加载页面的子页面</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  preloadLimit:5//预加载窗口数量限制(一旦超出,先进先出)默认不限制</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>该种方案使用简单、可预加载多个页面，但不会返回预加载每个页面的引用，若要获得对应webview引用，还需要通过<code>plus.webview.getWebviewById</code>方式获得；另外，因为mui.init是异步执行，执行完mui.init方法后立即获得对应webview引用，可能会失败，例如如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mui.init(&#123;</span><br><span class="line">  preloadPages:[</span><br><span class="line">    &#123;</span><br><span class="line">      url:&apos;list.html&apos;,</span><br><span class="line">      id:&apos;list&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;);</span><br><span class="line">var list = plus.webview.getWebviewByid(&apos;list&apos;);//这里可能返回空；</span><br></pre></td></tr></table></figure>
+<p>方式二：通过mui.preload方法预加载.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var page = mui.preload(&#123;</span><br><span class="line">    url:new-page-url,</span><br><span class="line">    id:new-page-id,//默认使用当前页面的url作为id</span><br><span class="line">    styles:&#123;&#125;,//窗口参数</span><br><span class="line">    extras:&#123;&#125;//自定义扩展参数</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>通过<code>mui.preload()</code>方法预加载，可立即返回对应webview的引用，但一次仅能预加载一个页面；若需加载多个webview，则需多次调用<code>mui.preload()</code>方法；</p>
+<p>如上两种方案，各有优劣，需根据具体业务场景灵活选择；</p>
+<h3 id="判断预加载是否成功"><a href="#判断预加载是否成功" class="headerlink" title="判断预加载是否成功"></a>判断预加载是否成功</h3><h4 id="方式一、通过直观现象分析"><a href="#方式一、通过直观现象分析" class="headerlink" title="方式一、通过直观现象分析"></a>方式一、通过直观现象分析</h4><p>预加载页面会立即打开，不会显示等待框；非预加载页面默认会先显示等待框，再显示新页面；</p>
+<h4 id="方式二、增加log分析预加载页面是否已创建"><a href="#方式二、增加log分析预加载页面是否已创建" class="headerlink" title="方式二、增加log分析预加载页面是否已创建"></a>方式二、增加log分析预加载页面是否已创建</h4><p>比如：A页面中预加载B页面，则在A页面完全加载（可通过setTimeout模拟）后，打印当前应用所有webview，看是否包含B页面的url，以此来分析。</p>
+<p>例如：在A页面增加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mui.plusReady(function()&#123;</span><br><span class="line">	setTimeout(function()&#123;</span><br><span class="line">		var array = plus.webview.all();</span><br><span class="line">		if(array)&#123;</span><br><span class="line">			for(var i=0,len=array.length;i&lt;len;i++)&#123;</span><br><span class="line">			    	console.log(array[i].getURL());</span><br><span class="line">		        &#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,5000)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="扩展阅读-3"><a href="#扩展阅读-3" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><p>代码块激活字符:    </p>
+<p>minitpreload</p>
+<p>mpreload(单个webview)</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

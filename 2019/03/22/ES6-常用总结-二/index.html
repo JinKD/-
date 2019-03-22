@@ -1,19 +1,239 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ES6 常用总结(二) | Hexo 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="John Doe">
+    
+    
+
+    <meta name="description" content="1、数组:1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162ES5里面新增一些东西循环:	1. for   for(let i=0; i&amp;lt;arr.length; i++)	2. whilearr.forEach()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6 常用总结(二) | Hexo">
+<meta property="og:url" content="https://github.com/JinKD/jinkaida.github.io.git/2019/03/22/ES6-常用总结-二/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、数组:1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162ES5里面新增一些东西循环:	1. for   for(let i=0; i&amp;lt;arr.length; i++)	2. whilearr.forEach()">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-22T07:21:12.084Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6 常用总结(二) | Hexo">
+<meta name="twitter:description" content="1、数组:1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162ES5里面新增一些东西循环:	1. for   for(let i=0; i&amp;lt;arr.length; i++)	2. whilearr.forEach()">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
 
 
-block TOC
-	aside#toc-column
-		//- 这个block的渲染与否取决于当前视窗的宽度，具体的控制在scss文件里头实现。
-		#toc-column-inner-wrapper
-			- var contentsOptions = {list_number: theme.toc.list_number_on};
-			#post-toc!= toc(page.content, contentsOptions)
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Hexo</a></h1>
+        <hr class="panel-cover__divider">
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title class>关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title class>归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
 
 
 
-block mainContent
-	main#main-content-column
-		#main-content-wrapper
-			#post-full-content!= page.content
-			include includes/post-tags
-			include includes/post-categories
-		
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ES6 常用总结(二)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2019-03-22" class="post-meta__date date">2019-03-22</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>1、数组:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">ES5里面新增一些东西</span><br><span class="line">循环:</span><br><span class="line">	1. for   for(let i=0; i&lt;arr.length; i++)</span><br><span class="line">	2. while</span><br><span class="line"></span><br><span class="line">arr.forEach()  //  代替普通for</span><br><span class="line">	arr.forEach(function(val, index, arr)&#123;</span><br><span class="line">	    console.log(val, index, arr);</span><br><span class="line">	&#125;);</span><br><span class="line">arr.map()  //  非常有用，做数据交互 &quot;映射&quot;.正常情况下，需要配合return，返回是一个新的数组,若是没有return，相当于forEach</span><br><span class="line">	注意：平时只要用map，一定是要有return</span><br><span class="line">	重新整理数据结构:[&#123;title:&apos;aaa&apos;&#125;]   -&gt;  [&#123;t:&apos;aaaa&apos;&#125;]</span><br><span class="line"></span><br><span class="line">arr.filter():  过滤，过滤一些不合格“元素”， 如果回调函数返回true，就留下来	</span><br><span class="line">arr.some(): 类似查找,  数组里面某一个元素符合条件，返回true</span><br><span class="line">arr.every(): 数组里面所有的元素都要符合条件，才返回true</span><br><span class="line"></span><br><span class="line">其实他们可以接收两个参数:</span><br><span class="line">	arr.forEach/map...(循环回调函数, this指向谁);</span><br><span class="line"></span><br><span class="line">arr.reduce()   //从左往右   ----&gt;  求数组的和、阶乘</span><br><span class="line">arr.reduceRight()  //从右往左</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">======================================================</span><br><span class="line">ES2017新增一个运算符:</span><br><span class="line">	幂</span><br><span class="line">		Math.pow(2,3)</span><br><span class="line">		2 ** 3</span><br><span class="line">======================================================</span><br><span class="line">for....of....：</span><br><span class="line">	arr.keys()	数组下标</span><br><span class="line">	arr.entries()	数组某一项</span><br><span class="line"></span><br><span class="line">	for(let val of arr)&#123;</span><br><span class="line">	    console.log(val);</span><br><span class="line">	&#125;</span><br><span class="line">======================================================</span><br><span class="line">扩展运算符:</span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">	let arr =[1,2,3];</span><br><span class="line">	let arr2 = [...arr];</span><br><span class="line">	let arr2 = Array.from(arr);</span><br><span class="line"></span><br><span class="line">Array.from:</span><br><span class="line">	作用: 把类数组(获取一组元素、arguments...) 对象转成数组</span><br><span class="line">	个人观点： 具备 length这个东西，就靠谱</span><br><span class="line"></span><br><span class="line">Array.of():  把一组值，转成数组</span><br><span class="line">	let arr = Array.of(&apos;apple&apos;,&apos;banana&apos;,&apos;orange&apos;);</span><br><span class="line">	console.log(arr);</span><br><span class="line"></span><br><span class="line">arr.find():  查找，找出第一个符合条件的数组成员，如果没有找到，返回undefined</span><br><span class="line">arr.findIndex(): 找的是位置， 没找到返回-1</span><br><span class="line">arr.fill()	填充</span><br><span class="line">	arr.fill(填充的东西, 开始位置, 结束位置);</span><br><span class="line"></span><br><span class="line">在ES2016里面新增:</span><br><span class="line">	arr.indexOf()</span><br><span class="line">	arr.includes()</span><br><span class="line">	str.includes()</span><br></pre></td></tr></table></figure></p>
+<p>2、对象:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">	json</span><br><span class="line"></span><br><span class="line">	对象简介语法(相当有用):</span><br><span class="line"></span><br><span class="line">	let json =&#123;</span><br><span class="line">		a:1,</span><br><span class="line">		b:2,</span><br><span class="line">		showA:function()&#123;</span><br><span class="line">			return this.a;</span><br><span class="line">		&#125;</span><br><span class="line">		showB:function()&#123;</span><br><span class="line">			return this.b;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	let json =&#123;</span><br><span class="line">		a,</span><br><span class="line">		b,</span><br><span class="line">		showA()&#123;  //个人建议: 一定注意，不要用箭头函数</span><br><span class="line">		&#125;,</span><br><span class="line">		showB()&#123;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	new Vuex.Store(&#123;</span><br><span class="line">		state,</span><br><span class="line">		mutation,</span><br><span class="line">		types,</span><br><span class="line">		actions</span><br><span class="line">	&#125;);</span><br><span class="line"></span><br><span class="line">	new Vue(&#123;</span><br><span class="line">		router,</span><br><span class="line">		App,</span><br><span class="line">		vuex</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">Object.is():	用来比较两个值是否相等</span><br><span class="line"></span><br><span class="line">	Object.is(&apos;a&apos;,&apos;a&apos;);</span><br><span class="line"></span><br><span class="line">	比较两个东西相等:</span><br><span class="line">		==</span><br><span class="line">		===</span><br><span class="line"></span><br><span class="line">	Object.is(NaN, NaN);</span><br><span class="line">	Object.is(+0, -0);</span><br><span class="line"></span><br><span class="line">Object.assign():   用来合并对象</span><br><span class="line"></span><br><span class="line">	let 新的对象 = Object.assign(目标对象, source1, srouce2....)</span><br><span class="line"></span><br><span class="line">	function ajax(options)&#123;  //用户传</span><br><span class="line">		let defaults=&#123;</span><br><span class="line">			type:&apos;get&apos;,</span><br><span class="line">			header:</span><br><span class="line">			data:&#123;&#125;</span><br><span class="line">			....</span><br><span class="line">		&#125;;</span><br><span class="line"></span><br><span class="line">		let json = Object.assign(&#123;&#125;, defaults, options);</span><br><span class="line">		.....</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	用途:</span><br><span class="line">		1. 复制一个对象</span><br><span class="line">		2. 合并参数</span><br><span class="line"></span><br><span class="line">ES2017引入:</span><br><span class="line">	Object.keys()</span><br><span class="line">	Object.entries();</span><br><span class="line">	Object.values();</span><br><span class="line"></span><br><span class="line">		let &#123;keys, values, entries&#125; = Object;let &#123;keys, values, entries&#125; = Object;</span><br><span class="line"></span><br><span class="line">对象身上:   计划在ES2018引入</span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">	let json = &#123;a:3, b:4&#125;;</span><br><span class="line">        	let json2 = &#123;...json&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>3、Promise:    承诺，许诺<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	作用:  解决异步回调问题</span><br><span class="line"></span><br><span class="line">	传统方式，大部分用回调函数，事件</span><br><span class="line"></span><br><span class="line">	ajax(url,&#123;  //获取token</span><br><span class="line">		ajax(url,()=&gt;&#123;  //获取用户信息</span><br><span class="line">			ajax(url, ()=&gt;&#123;</span><br><span class="line">				//获取用户相关新闻</span><br><span class="line">			&#125;)</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	语法:</span><br><span class="line">		let promise = new Promise(function(resolve, reject)&#123;</span><br><span class="line">		    //resolve,   成功调用</span><br><span class="line">		    //reject     失败调用</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		promise.then(res=&gt;&#123;</span><br><span class="line"></span><br><span class="line">		&#125;, err=&gt;&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	promise.catch(err=&gt;&#123;&#125;)</span><br><span class="line"></span><br><span class="line">	本人用法:</span><br><span class="line">		new Promise().then(res=&gt;&#123;</span><br><span class="line"></span><br><span class="line">		&#125;).catch(err=&gt;&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;)</span><br><span class="line"></span><br><span class="line">	Promise.resolve(&apos;aa&apos;) :  将现有的东西，转成一个promise对象， resolve状态，成功状态</span><br><span class="line">		等价于:</span><br><span class="line">		new Promise(resolve =&gt;&#123;</span><br><span class="line">		    resolve(&apos;aaa&apos;)</span><br><span class="line">		&#125;);</span><br><span class="line">	Promise.reject(&apos;aaa&apos;):   将现有的东西，转成一个promise对象，reject状态，失败状态</span><br><span class="line">		等价于:</span><br><span class="line">		new Promise((resolve, reject) =&gt;&#123;</span><br><span class="line">		    reject(&apos;aaa&apos;)</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">√	Promise.all([p1, p2, p3]):  把promise打包，扔到一个数组里面，打包完还是一个promise对象</span><br><span class="line">		必须确保，所有的promise对象，都是resolve状态，都是成功状态</span><br><span class="line">	Promise.race([p1, p2, p3]): 只要有一个成功，就返回</span><br><span class="line"></span><br><span class="line">	用户登录  -&gt;  用户信息</span><br></pre></td></tr></table></figure></p>
+<p>4、模块化:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">js不支持模块化</span><br><span class="line">	ruby   require</span><br><span class="line">	python  import</span><br><span class="line"></span><br><span class="line">在ES6之前，社区制定一套模块规范:</span><br><span class="line">	Commonjs		主要服务端  nodeJs    require(&apos;http&apos;)</span><br><span class="line">	AMD			requireJs, curlJs</span><br><span class="line">	CMD			seaJs</span><br><span class="line"></span><br><span class="line">ES6出来，同意服务端和客户端模块规范:</span><br><span class="line">	import &#123;xx&#125; ddd</span><br><span class="line">	</span><br><span class="line">	Math.pow()</span><br><span class="line">	Math.abs()</span><br><span class="line"></span><br><span class="line">	import &#123;pow, abs&#125; from &apos;Math&apos;		我自己瞎想</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">模块化：</span><br><span class="line">	注意： 需要放到服务器环境</span><br><span class="line">	a). 如何定义模块？</span><br><span class="line">		export  东西</span><br><span class="line">		export const a =12;</span><br><span class="line">		export&#123;</span><br><span class="line">			a as aaa,</span><br><span class="line">			b as banana</span><br><span class="line">		&#125;</span><br><span class="line">	b). 如何使用?</span><br><span class="line">		import</span><br><span class="line">		import &apos;./modules/1.js&apos;; </span><br><span class="line">		import &#123;a as a, banana, c&#125; from &apos;./modules/2.js&apos;</span><br><span class="line">		import * as modTwo from &apos;./modules/2.js&apos;;</span><br><span class="line">使用模块:</span><br><span class="line">	&lt;script type=&quot;module&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import:  特点</span><br><span class="line">	a). import 可以是相对路径，也可以是绝对路径</span><br><span class="line">		import &apos;https://code.jquery.com/jquery-3.3.1.js&apos;;</span><br><span class="line">	b). import模块只会导入一次，无论你引入多少次</span><br><span class="line">	c). import &apos;./modules/1.js&apos;;  如果这么用，相当于引入文件</span><br><span class="line">	d). 有提升效果，import会自动提升到顶部，首先执行</span><br><span class="line">	e). 导出去模块内容，如果里面有定时器更改，外面也会改动，不想Common规范缓存</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 	* import()  类似node里面require， 可以动态引入, 默认import语法不能写到if之类里面</span><br><span class="line">	返回值，是个promise对象</span><br><span class="line"></span><br><span class="line">	import(&apos;./modules/1.js&apos;).then(res=&gt;&#123;</span><br><span class="line">		console.log(res.a+res.b);</span><br><span class="line">	&#125;);</span><br><span class="line"></span><br><span class="line">	优点:</span><br><span class="line">		1. 按需加载</span><br><span class="line">		2. 可以写if中</span><br><span class="line">		3. 路径也可以动态</span><br><span class="line"></span><br><span class="line">	Promise.all([])</span><br><span class="line">=============================================</span><br><span class="line">ES2017加  async  await:</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
